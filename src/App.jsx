@@ -7,6 +7,7 @@ import RepoCard from "./RepoCard/RepoCard";
 import { useDebounce } from "./hooks/useDebounce";
 
 const TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
+console.log(TOKEN);
 
 const initialState = {
   userProfileImage: "",
@@ -45,7 +46,7 @@ const reducer = (state, action) => {
 function App() {
   const [query, setQuery] = useState("AYushgupta4387");
   const [inputError, setInputError] = useState(false);
-  const debouncedQuery = useDebounce(query);
+  const debouncedQuery = useDebounce(query, inputError);
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -61,6 +62,8 @@ function App() {
 
   useEffect(() => {
     if (!inputError) {
+      console.log({ debouncedQuery });
+      console.log({ TOKEN });
       fetch(`https://api.github.com/users/${debouncedQuery}`, {
         headers: {
           Authorization: `token ${TOKEN}`,
@@ -68,6 +71,7 @@ function App() {
       })
         .then((response) => response.json())
         .then((data) => {
+          console.log({ data });
           dispatch({ type: "SET_USER_DATA", payload: data });
         })
         .catch((error) => {
