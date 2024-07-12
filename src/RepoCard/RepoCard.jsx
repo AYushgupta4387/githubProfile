@@ -16,7 +16,7 @@ function calculateDaysAgo(lastUpdatedTimeStamp) {
 
 function RepoCard({ repo }) {
   function handleClick() {
-    window.location.href = repo.html_url;
+    window.open(repo.html_url, "_blank");
   }
 
   return (
