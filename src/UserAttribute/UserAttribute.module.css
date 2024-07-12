@@ -1,0 +1,20 @@
+.userAttributeContainer {
+  color: var(--grey-three);
+  background-color: var(--black-one);
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.userAttributeContainer span {
+  border-left: 2px solid var(--grey-three);
+  display: inline-block;
+  width: max-content;
+  height: 4vh;
+  padding-left: 0.8rem;
+  margin-left: 0.8rem;
+  line-height: 4vh;
+  color: white;
+}

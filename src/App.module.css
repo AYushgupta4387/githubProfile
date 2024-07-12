@@ -1,0 +1,70 @@
+.mainTopContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  max-width: 1000px;
+}
+
+.userImgContainer {
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--grey-one);
+  border-radius: 10px;
+  position: relative;
+  bottom: 2rem;
+}
+
+.userImgContainer img {
+  width: 85%;
+  height: 85%;
+  border-radius: 10px;
+}
+
+.userAttributesContainer {
+  display: flex;
+  flex: 1;
+  gap: 2rem;
+}
+
+.userInfoContainer {
+  color: var(--white-one);
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2rem 2rem;
+}
+
+@media (max-width: 680px) {
+  .mainTopContainer {
+    gap: 2rem;
+    margin: 2rem 0;
+    align-items: flex-start;
+  }
+
+  .userImgContainer {
+    height: 6rem;
+    width: 6rem;
+    bottom: 4rem;
+  }
+
+  .userAttributesContainer {
+    flex-direction: column;
+  }
+
+  .userInfoContainer {
+    margin: 0 1rem 2rem;
+  }
+
+  .gridContainer {
+    grid-template-columns: auto;
+    margin: 0 1rem;
+  }
+}
